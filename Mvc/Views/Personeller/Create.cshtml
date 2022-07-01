@@ -1,0 +1,78 @@
+﻿@using AppCore.Enums
+@using Business.Models
+@model PersonelModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Personel</h4>
+<hr />
+<div class="row">
+    <div class="col-12">
+        <form asp-action="Create">
+		@Html.AntiForgeryToken()
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="row mb-3">
+                <label asp-for="Adi" class="col-2 col-form-label"></label>
+				<div class="col-5">
+					<input asp-for="Adi" class="form-control" />
+					<span asp-validation-for="Adi" class="text-danger"></span>
+				</div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Soyadi" class="col-2 col-form-label"></label>
+				<div class="col-5">
+					<input asp-for="Soyadi" class="form-control" />
+					<span asp-validation-for="Soyadi" class="text-danger"></span>
+				</div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="KimlikNo" class="col-2 col-form-label"></label>
+				<div class="col-5">
+					<input asp-for="KimlikNo" class="form-control" />
+					<span asp-validation-for="KimlikNo" class="text-danger"></span>
+				</div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="DogumTarihi" class="col-2 col-form-label"></label>
+				<div class="col-5">
+					<input asp-for="DogumTarihi" class="form-control" />
+					<span asp-validation-for="DogumTarihi" class="text-danger"></span>
+				</div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Cinsiyet" class="col-2 col-form-label"></label>
+				<div class="col-5">
+					<select asp-for="Cinsiyet" class="form-control">
+						<option value="@((int)Cinsiyet.Kadın)">@Cinsiyet.Kadın</option>
+						<option value="@((int)Cinsiyet.Erkek)">@Cinsiyet.Erkek</option>
+					</select>
+					<span asp-validation-for="Cinsiyet" class="text-danger"></span>
+				</div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="UnvanId" class="col-2 col-form-label"></label>
+				<div class="col-5">
+					<select asp-for="UnvanId" class="form-control" asp-items="ViewBag.UnvanId">
+						<option value="">-- Seçiniz --</option>
+					</select>
+					<span asp-validation-for="UnvanId" class="text-danger"></span>
+				</div>
+            </div>
+            
+            <div class="row mb-3">
+				<div class="offset-2 col-5">
+					<input type="submit" value="Save" class="btn btn-primary" />
+					&nbsp;&nbsp;
+                    <button type="reset" class="btn btn-outline-primary">Reset</button>
+					&nbsp;&nbsp;
+					<a asp-action="Index">Back to List</a>
+				</div>
+            </div>
+        </form>
+    </div>
+</div>
+

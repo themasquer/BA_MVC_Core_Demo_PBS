@@ -1,0 +1,51 @@
+﻿@using Business.Models
+@model PersonelModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Personel</h4>
+    <hr />
+    <dl class="row">
+        
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.TamAdiDisplay)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.TamAdiDisplay)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.KimlikNo)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.KimlikNo)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.DogumTarihiDisplay)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.DogumTarihiDisplay)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Cinsiyet)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Cinsiyet)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.UnvanDisplay)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.UnvanDisplay)
+        </dd>
+        
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>&nbsp;|&nbsp;
+    <a asp-action="Index">Back to List</a>
+</div>

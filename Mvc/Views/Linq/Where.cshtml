@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Personel>
+
+@Html.DisplayNameFor(m => m.Adi)
+<hr />
+
+@foreach (Personel personel in Model)
+{
+    @personel.Id
+    <br />
+    @personel.Adi
+    <br />
+    @personel.Soyadi
+    <br />
+    @personel.Cinsiyet
+    <br />
+    @personel.Unvan.Adi
+    <hr />
+}
